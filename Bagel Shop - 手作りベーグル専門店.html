@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/81905/Downloads/index%20(3).html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagel Shop - 手作りベーグル専門店</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #5D4E37;
+            background-color: #FAF7F2;
+        }
+
+        /* Header */
+        header {
+            background-color: #F5E6D3;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5D4E37;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8B4513;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(245, 230, 211, 0.8), rgba(245, 230, 211, 0.8)),
+                        url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #8B4513;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #5D4E37;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #D2B48C;
+            color: #5D4E37;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #C19A6B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #8B4513;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #5D4E37;
+        }
+
+        /* Products Section */
+        .products {
+            background-color: #F5E6D3;
+            padding: 5rem 2rem;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #8B4513;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #8B4513;
+        }
+
+        .product-info p {
+            color: #5D4E37;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        /* Store Info Section */
+        .store-info {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .store-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .store-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #8B4513;
+        }
+
+        .store-details {
+            background-color: #F5E6D3;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .store-details h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+
+        .store-details p {
+            margin-bottom: 0.5rem;
+            color: #5D4E37;
+        }
+
+        .store-image {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .store-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8B4513;
+            color: #F5E6D3;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #F5E6D3;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background-color: rgba(245, 230, 211, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: rgba(245, 230, 211, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .store-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Bagel Shop</div>
+            <ul class="nav-links">
+                <li><a href="file:///C:/Users/81905/Downloads/index%20(3).html#home">ホーム</a></li>
+                <li><a href="file:///C:/Users/81905/Downloads/index%20(3).html#about">私たちについて</a></li>
+                <li><a href="file:///C:/Users/81905/Downloads/index%20(3).html#products">商品</a></li>
+                <li><a href="file:///C:/Users/81905/Downloads/index%20(3).html#store">店舗情報</a></li>
+                <li><a href="file:///C:/Users/81905/Downloads/index%20(3).html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>手作りベーグル専門店</h1>
+            <p>毎日焼きたての美味しいベーグルをお届けします</p>
+            <a href="file:///C:/Users/81905/Downloads/index%20(3).html#products" class="cta-button">商品を見る</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>私たちについて</h2>
+        <p>
+            Bagel Shopは、伝統的な製法にこだわり、厳選された素材を使用して毎日手作りでベーグルを焼いています。
+            もちもちとした食感と豊かな風味をお楽しみください。地域の皆様に愛される、温かいベーグル専門店を目指しています。
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="products-container">
+            <h2>人気商品</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="./Bagel Shop - 手作りベーグル専門店_files/photo-1551024506-0bccd828d307" alt="プレーンベーグル">
+                    <div class="product-info">
+                        <h3>プレーンベーグル</h3>
+                        <p>シンプルで飽きのこない定番の味。もちもち食感が自慢です。</p>
+                        <div class="price">¥200</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="./Bagel Shop - 手作りベーグル専門店_files/photo-1586444248902-2f64eddc13df" alt="セサミベーグル">
+                    <div class="product-info">
+                        <h3>セサミベーグル</h3>
+                        <p>香ばしいゴマの風味が楽しめる人気商品です。</p>
+                        <div class="price">¥230</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="./Bagel Shop - 手作りベーグル専門店_files/photo-1555507036-ab794f4afe5e" alt="ブルーベリーベーグル">
+                    <div class="product-info">
+                        <h3>ブルーベリーベーグル</h3>
+                        <p>甘酸っぱいブルーベリーがたっぷり入った贅沢な一品。</p>
+                        <div class="price">¥280</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Info Section -->
+    <section id="store" class="store-info">
+        <div class="store-grid">
+            <div class="store-content">
+                <h2>店舗情報</h2>
+                <div class="store-details">
+                    <h3>営業時間</h3>
+                    <p>平日: 7:00 - 18:00</p>
+                    <p>土日祝: 8:00 - 17:00</p>
+                    <p>定休日: 月曜日</p>
+                    
+                    <h3>アクセス</h3>
+                    <p>〒123-4567</p>
+                    <p>東京都渋谷区○○町1-2-3</p>
+                    <p>JR渋谷駅より徒歩5分</p>
+                    
+                    <h3>お問い合わせ</h3>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>Email: info@bagelshop.com</p>
+                </div>
+            </div>
+            <div class="store-image">
+                <img src="./Bagel Shop - 手作りベーグル専門店_files/photo-1554118811-1e0d58224f24" alt="店舗外観">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2024 Bagel Shop. All rights reserved.</p>
+        <p>毎日焼きたての美味しいベーグルをお届けします</p>
+        <div class="social-links">
+            <a href="file:///C:/Users/81905/Downloads/index%20(3).html#">Facebook</a>
+            <a href="file:///C:/Users/81905/Downloads/index%20(3).html#">Instagram</a>
+            <a href="file:///C:/Users/81905/Downloads/index%20(3).html#">Twitter</a>
+        </div>
+    </footer>
+
+</body></html>
